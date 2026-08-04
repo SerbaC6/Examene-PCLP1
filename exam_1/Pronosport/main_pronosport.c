@@ -10,48 +10,9 @@ typedef struct {
 	int egal;
 } inregistrare;
 
-// Functie ce calculeaza numarul de meciuri egale intre cei doi jucatori
-int calc_meciuri(char mec_juc[NR_MECIURI], char *juc_curent)
-{
-	int i, nr_meciuri = 0;
-
-	for (i = 0; i < NR_MECIURI; i++) {
-		if (mec_juc[i] == juc_curent[i]) {
-			nr_meciuri++;
-		}
-	}
-
-	return nr_meciuri;
-}
-
-
-void sort_arr(inregistrare *jucatori, int n)
-{
-	int i, j;
-
-	for (i = 0; i < n - 1; i++) {
-		for (j = i + 1; j < n; j++) {
-			if (jucatori[i].egal < jucatori[j].egal) {
-				inregistrare aux = jucatori[i];
-				jucatori[i] = jucatori[j];
-				jucatori[j] = aux;
-			}
-		}
-	}
-}
-
-// Functie ce realiza alocarea dinamica a unui string
-char *allocate_string(int str_size, int data_size)
-{
-	char *aux = (char *)malloc(str_size * data_size);
-
-	if (!aux) {
-		fprintf(stderr, "malloc failed!\n");
-		return NULL;
-	}
-
-	return aux;
-}
+int calc_meciuri(char mec_juc[NR_MECIURI], char *juc_curent);
+void sort_arr(inregistrare *jucatori, int n);
+char *allocate_string(int str_size, int data_size);
 
 int main(void)
 {
@@ -120,3 +81,47 @@ int main(void)
 	
 	return 0;
 }
+
+// Functie ce calculeaza numarul de meciuri egale intre cei doi jucatori
+int calc_meciuri(char mec_juc[NR_MECIURI], char *juc_curent)
+{
+	int i, nr_meciuri = 0;
+
+	for (i = 0; i < NR_MECIURI; i++) {
+		if (mec_juc[i] == juc_curent[i]) {
+			nr_meciuri++;
+		}
+	}
+
+	return nr_meciuri;
+}
+
+
+void sort_arr(inregistrare *jucatori, int n)
+{
+	int i, j;
+
+	for (i = 0; i < n - 1; i++) {
+		for (j = i + 1; j < n; j++) {
+			if (jucatori[i].egal < jucatori[j].egal) {
+				inregistrare aux = jucatori[i];
+				jucatori[i] = jucatori[j];
+				jucatori[j] = aux;
+			}
+		}
+	}
+}
+
+// Functie ce realiza alocarea dinamica a unui string
+char *allocate_string(int str_size, int data_size)
+{
+	char *aux = (char *)malloc(str_size * data_size);
+
+	if (!aux) {
+		fprintf(stderr, "malloc failed!\n");
+		return NULL;
+	}
+
+	return aux;
+}
+
