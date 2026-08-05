@@ -137,6 +137,7 @@ void show_poly(polinom_rar polin_curr)
 
 		// Apoi coeficientul. Il vom afisa in modul deoarece deja am rezolvat semnul
 		// fabs = abs pentru double sau float
+		// .0lf = afisam un float cu 0 zecimale in coada
 		if (c != 1 && c != -1) {
 			printf("%.0lf", fabs(c));
 		} else if (exp == 0) {
