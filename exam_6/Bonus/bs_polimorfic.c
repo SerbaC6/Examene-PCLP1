@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void *polimorphic_bsearch(void *key, void *base, size_t num, size_t data_size, int (*cmp)(const void *, const void *))
+void *polimorphic_bsearch(void *key, void *base, size_t num, size_t data_size,
+						  int (*cmp)(const void *, const void *))
 {
 	// Tratarea cazurilor in care colectia este goala sau pointerii sunt invalizi
 	if (num == 0 || !base || !key) {
