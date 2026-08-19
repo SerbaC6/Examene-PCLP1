@@ -1,10 +1,11 @@
 // Cod ce ajuta la crearea fisierului binar polinoame.bin
 #include <stdio.h>
 
-static void scrie_pol(FILE *out, int ntn, int grd, double *c, int *e)
+void scrie_pol(FILE *out, int ntn, int grd, double *c, int *e)
 {
 	fwrite(&ntn, sizeof(int), 1, out);
 	fwrite(&grd, sizeof(int), 1, out);
+	
 	for (int i = 0; i < ntn; i++) {
 		fwrite(&c[i], sizeof(double), 1, out);
 		fwrite(&e[i], sizeof(int), 1, out);

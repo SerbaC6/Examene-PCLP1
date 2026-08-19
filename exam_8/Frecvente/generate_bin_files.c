@@ -14,8 +14,8 @@ int main(void)
 	fwrite(bytes, sizeof(unsigned char), 5, f_bin);
 	fclose(f_bin);
 
-    // Generam fisierul text
-    FILE *f_txt = fopen("analysis.txt", "wt");
+	// Generam fisierul text
+	FILE *f_txt = fopen("analysis.txt", "wt");
 	
 	// Codul de analizat: 5 (101 in binar)
 	fprintf(f_txt, "5\n");
@@ -24,5 +24,5 @@ int main(void)
 	fprintf(f_txt, "1 - 1\n");  
 	
 	fclose(f_txt);
-    return 0;
+	return 0;
 }
